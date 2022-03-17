@@ -1,5 +1,6 @@
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
@@ -7,6 +8,10 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: "/tailwind" }]
+}
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
