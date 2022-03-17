@@ -7,9 +7,11 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production remix build",
     "dev": "cross-env NODE_ENV=development remix dev",
+    "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore .",
     "postinstall": "remix setup node"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.16.7",
     "@remix-run/react": "^1.2.3",
     "@remix-run/vercel": "^1.2.3",
     "autoprefixer": "^10.4.4",
@@ -26,9 +28,11 @@
     "@remix-run/serve": "^1.2.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
-    "@vercel/node": "^1.13.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.0",
+    "prettier-plugin-tailwindcss": "^0.1.8",
     "typescript": "^4.5.5"
   },
   "engines": {
