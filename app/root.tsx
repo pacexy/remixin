@@ -9,9 +9,9 @@ import {
 } from 'remix'
 import type { MetaFunction } from 'remix'
 
-export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: '/tailwind' }]
-}
+import styles from './tailwind.css'
+
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' }
