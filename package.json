@@ -8,7 +8,13 @@
     "build": "cross-env NODE_ENV=production remix build",
     "dev": "cross-env NODE_ENV=development remix dev",
     "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore .",
-    "postinstall": "remix setup node"
+    "postinstall": "remix setup node",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,json,css,ts,tsx,md}": "prettier --write",
+    "!(pnpm-lock).{yml,yaml}": "prettier --write",
+    "*.{js,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
@@ -31,6 +37,8 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.6",
     "prettier": "^2.6.0",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "typescript": "^4.5.5"
